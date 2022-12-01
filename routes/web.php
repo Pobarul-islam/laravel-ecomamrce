@@ -1,10 +1,7 @@
 <?php
 
 
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\GreetingController;
-use App\Http\Controllers\PhotoController;
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::get('/contact', function () {
-    return view('home.contact');
-});
-Route::get('/about', function () {
-    return view('home.about');
-});
-
-Route::get('/signup', function () {
-    return view('home.signup');
-});
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
+Route::post("/login",[UserController ::class, 'login']);
